@@ -9,6 +9,17 @@ _You can find the original description of the challenge [here](https://challenge
 
 The goal of the challenge they offer is to develop new algorithms to detect **lymph node metastases** in histological images of patients diagnosed with breast cancer. 
 
+
+<p align='center'>
+  <img src="https://i.postimg.cc/7LBRCxWF/Capture-d-e-cran-2019-01-25-a-10-45-05.png"/>
+</p>
+
+<p align='center'>
+ <i>Example of two tiles (non-tumoral on the left, tumoral on the right)</i>
+</p>
+
+
+
 ### Clinical Context
 
 Metastasis is the **spread of cancer cells** from the place where they first formed (here breast) to another part of the body. For patients diagnosed with breast cancer, even after finding the primary tumor, an examination of the regional lymph nodes in the axilla is always performed to determine if the breast cancer ***metastasized*** (i.e. if it spread through the lymphatic system).
@@ -28,6 +39,18 @@ The challenge proposed by Owkin is a **weakly-supervised binary classification p
 ### Data
 
 To each patient corresponds one slide (*from the Camelyon dataset*). However, due to the extremely large dimensions of the whole-slide images, the data had to be preprocessed : for each slide, smaller images (tiles) of size 896x896 (then resized at 224x224) were extracted for a total of **1,000 tiles per patient** (or less if there is not enough tissue). 
+
+
+<p align='center'>
+ 
+  <img src="https://lh4.googleusercontent.com/8nSdgR-NvRGrmICGovsulU9bBapteSqCEAmRPGjUJp9KrFhZmGsVn2mZAVKJBnwyLQpl460pf6bBL5kSggZb-MNWz_s-j7sbN0cmj6vV3bz1W_1cdk2m2FlM_ppGXdaUUfFkMubU" width="394" height="600"/>
+ 
+</p>
+
+<p align='center'>
+ <i>Example of a whole slide image with the tiles selected during preprocessing highlighted in red</i>
+</p>
+
 
 Each patient is thus represented by **1,000 images** (or less). **ResNet** features were also extracted for each of these images, providing another input alternative.
 
